@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Quantao's Blog - Medicinal Chemistry Topics</title>
+  <title>Quantao's Blog - Medicinal Chemisry</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,11 +59,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>The ring bridges the most other rings is the Max ring</h1>
-            <h2 class="subheading">A strategy for the first step retrosynthetic analys,especially for highly caged  natural products.</h2>
+            <h1>Dyrk1a/CLK1 project overview-POST1</h1>
+            <h2 class="subheading">This is the first post</h2>
             <span class="meta">Posted by
               <a href="#">Quantao</a>
-              on December 07, 2020</span>
+              on December 13, 2020</span>
           </div>
         </div>
       </div>
@@ -75,63 +75,34 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Morpine's structure was determined in 1925, the first patent of total synthesis of it showed up in 1952, followed by several other methods.Morphine means a lot to the whole society, it can reduce pain but also cause addition, it is 
-a fansnation molecule in many ways. But when we talk about the way to get it by total synthesis, what is a good way to break down, especially what should be the first disconnection when we do the retro synthesis analysis ?<p/>
+         <p>The Kinase Dyrk1a and CLK1 are very close to each other, they all belong to the CMGC family.<p/>
 
 <a href="#">
-            <img class="img-fluid" src="img/morphine0.png" alt="">
+            <img class="img-fluid" src="img/POST1/POST1.0.png" alt="">
             </a>
-<p>image:<a href="https://en.wikipedia.org/wiki/Morphine/">Wikipedia</a><p/>
+<p>image:<a href="https://klifs.net/">KLIFs</a> , modified on powepoint to lable Dyrk1a and Clk1.<p/>
 
-<p>It seems there are already some key principle all chemsits agreen on, like make good use of symmetry, since a lot highly complexed structure acturally comprised of
-two or three exact the same subunit. Also some one would recommend there are certain patten to be a "retron" like the 1,3 positioned N/O reminds people this could be
-obtained by a Mannich from an ketone (enolatre) with an imunium ion.</p>
-    <p>if you really think about the whole thing, 
-synthesis paths depend highly on the knowledge structure of the person. Here I quote Richmond Sarpong from University of California, Berkeley, in a 2020 chemistry synposium,
-but reorgnized based on my own understanding, that "chemists are acturally very biased when doing retrosynthis, we should be objective, for those highly caged nature
-product, the ring that bridges the most other rings should be disconnect". <p/>
-
-<p>The suggestion here is simple and straght forward, that is "Which is the ring that bridges the most other rings ? Find it, and do the disconnection there! Together
-    with some graphic recognition expert, Richmond established a cool web site <a href="http://www.maxbridge.org/">MaxBridge.org</a>, which is designed to find out the key ring that would enable 
-people "objectively" look at a complex molecule.Next, we will show a quick guide how to use this web site to help you focus on the key ring out of many looking extremely
-similar if not exactly the same.<p/>
-
-Go to DrugBank, type "morphine" and find the 3-D coordinate.
-
-
-<a href="#">
-            <img class="img-fluid" src="img/morphine1.png" alt="">
+<p>The Morris group has previously developed some 6-azaindole cored, mainly by the previous Ph.D. student Steve Butler. Based on Steve's and my work, the early stage work was summarized in the <a href="https://pan.baidu.com/s/1VRtTkbmUCABKVi0AoXmaQQ">2019 NSW Organic One Day Symposium Poster</a>, in which several 7-position substituted 6-azaindole compound proposed<p/> 
+<p>Based on Maestro Induced fit docking (Schrodinger2018-4) and cresset activity atlas model, some new structures were proposed as the below image.<p/>
+            <a href="#">
+            <img class="img-fluid" src="img/POST1/POST1.1.png" alt="">
             </a>
 
-<p>click the download as MOL file, then your computer may be able to download directly as a file, if it shows instead as a web page like below, you could just copy the whole content and paste it to a newly created file called "morphine.mol" (touch morphine.mol), or creat morphine.txt if you use Windows and past it to the txt
-file. <p/>
 
+<p> The logic here is :<p/>
+<p>1. Build two separate SAR models for Dyrk1a and Clk1 respectively.<p/>
+<p>2.New compound structures were proposed based on the Morris group’s previous work<p/>
+<p>3. Two predicted pIC50 was calculated, the one with higher Dyrk1a pIC50 was chosen<p/>
+<p>4. Retrosynthetic analysis of the compound, 28 and 32.<p/>
+<p>5.Synthesis of the compound.<p/>
+<p>6.In-vitro activity testing.<p/>
 
-<p>Go back to the MaxBridge web site, use browse to upload the morphine.mol file, then click "submit" in the bottom, and wait for 1-5 minites while the calculation happening. <p/>
-
-<a href="#">
-            <img class="img-fluid" src="img/morphine3.png" alt="">
+ <a href="#">
+            <img class="img-fluid" src="img/POST1/POST1.2.png" alt="">
             </a>
+<p> It will be good if the compound could be analyzed by predictive retrosynthesis in Reaxy. It seems such great function now can only provide to commercial usage, but the related paper is <a href="https://www.nature.com/articles/nature25978">a nature paper about predictive retrosynthesis.</a>  <p/> 
 
-<a href="#">
-            <img class="img-fluid" src="img/morphine4.png" alt="">
-            </a>
-
-<p>The result will be like the next image, saying that the input file actually is a 2D structure and the web automaticly convert it to 3D before the real analysis (upload 3D structure derived from ChemDarw 3D or any other software can produce such fiel if possible). 5 rings are high lighted as purple or gray, with the first one being the "Max Ring", that the ring bridges the most other rings !
-The first and second ring are listed below. The purple atoms are bridged atoms, the gray ones are non-bridged, so from an retrosynthetic perspective, the bridged atoms should be put on more attention when try to break the whole morphine structure.<p/>
-
-<a href="#">
-            <img class="img-fluid" src="img/morphine5.png" alt="">
-            </a>
-
-<a href="#">
-            <img class="img-fluid" src="img/morphine6.png" alt="">
-            </a>
-
- <p>The take away home message here, is simple, break down the Max Ring!
-For more reading about the Max Ring strategy, one can search the group page of Richmond Sarpong, UC Berkeley,<a href="https://sarponggroup.com/">Richmond Group</a> <p/>
-
-          
+         
         </div>
       </div>
     </div>
