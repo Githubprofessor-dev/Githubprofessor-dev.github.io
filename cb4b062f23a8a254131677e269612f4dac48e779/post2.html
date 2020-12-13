@@ -59,11 +59,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>NO PAINS with GAINS</h1>
-            <h2 class="subheading">People used to find certain pattens in retro synthetic analysis</h2>
+            <h1>The QSAR-2 workflow summary</h1>
+            <h2 class="subheading">This is for my QSAR-2 model which is derived from the DM scaffold (6-azaindole) based on Steve’s data, the protocol involves maestro docking and cresset activity model, with the help of Knime. </h2>
             <span class="meta">Posted by
               <a href="#">Quantao</a>
-              on December 07, 2020</span>
+              on December 13, 2020</span>
           </div>
         </div>
       </div>
@@ -75,36 +75,66 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Nowdays it is very popular that, starting from computer aided drug desgin, or virtual screening that one can easily got a lot "hit" compounds towards a 
-certain target of interest. For example, the current SARS-COV-2 relatied protein targets. However, for those chemists who just stepped into or try to step 
-into this zone, it is always good to be reminded that even you already defined rules like "rule of five" in the screening procedure, there are a class of 
-infamous compounds called "Pan-assay Inteference Compounds" or "PAINS" compunds, which has been found would be "postive" in many in vitro assays, but they are
-non-selective, binding to a lot protein targets. You want to remove these compounds at early stage of the drug development, before wasting a lot time and resources on this "false posotive" hit.<p/>
+         <h2> Step 1: Ensemble docking to select out the best grid per DM-ligand.</h2>
+            <p>Two grids for Dyrk1a(4YLJ) and Clk1(6I5I) were generated, respectively, one derived from PDB original structural, another one produced after a 20 nanosecond molecular dynamic process.<p/>
 
-<p>But let first have a look at the good ones, based on a paper published in 2014, CHEMICAL NEWS
-The Most Common Heterocycles in Drugs, published in Science, by Derek Lowe, the top heterocycles appeared in FDA approved drugs are list as the next image, from left to right, up to bottom.</p>
+<p>The size of the 14 ligands varies a lot, to minimize the issue that a small ligand was docked to a big grid, we need to decide which grid make more sense by an ensemble docking workflow as shown below.</p>
 
 <a href="#">
-            <img class="img-fluid" src="img/blog5.1.png" alt="">
+            <img class="img-fluid" src="img/POST2/POST2.0.png" alt="">
             </a>
 
-<p>Now time for bad molecules, there are a lot, only several common ones listed as the next<p/>
+<p>After this workflow, a different DM ligand was decided to run a subsequently induced-fit docking based on a different Grid. The table below gives the result for the best grid-based on the glide score. For example, for the DM02 compound, the original CLK grid named “glide-grid_1_6I5I_minimized” gives better binding affinity compared to its MD counterpart, while DM40 prefers the MD version of Grid named “glide-grid_1_6I5I_4169”. <p/>
+        <p>This kind of extra work before induced-fit docking gives us a chance to adjust the backbone of the amino acid around the binding pocket a bit since this is completely ignored in IFD, with only side-chain flexibility accounted for.<p/>
 
 <a href="#">
-            <img class="img-fluid" src="img/blog5.3.png" alt="">
+            <img class="img-fluid" src="img/POST2/POST2.1.png" alt="">
             </a>
+            
+            <p>Ensemble docking for CLK1<p/>
+            <a href="#">
+            <img class="img-fluid" src="img/POST2/POST2.2.png" alt="">
+            </a>
+  <h2>Step 2: Induced fit docking to select out the best pose per DM-ligand.</h2>
 
-<p>If you want to know if a cetain compound of your interst is a PAINS compound, you could try https://www.cbligand.org/, but please be advised that the algorithun for
-filtering out PAINS in an ongoing program, there might be better web or software to do the similar thing. And always remember, the result is just an suggestion, you need to make your own desicion to accept the result or not, after all, if you put some FDA drug, some algorithum gives you a PAIN as well.
-"A small proportion (ca. 5%) of FDA-approved drugs contain PAINS-recognized substructures, these comprising both natural products and synthetic drugs"—— ACS Chem Biol. 2018 Jan 19; 13(1): 36–44.</p>
-
-<p>Several excellent articles can be read if you would more about PAINS, one is as above, the other is a blog from Derek Lowe again.  https://blogs.sciencemag.org/pipeline/archives/2010/02/08/polluting_the_literature_with_pains
-
-And the relatied article the bolg has refered to, https://pubs.acs.org/doi/abs/10.1021/jm901137j</p>
-</p>
-     
-          </a>
-          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+             <a href="#">
+            <img class="img-fluid" src="img/POST2/POST2.3.png" alt="">
+            </a>
+           
+            <a href="#">
+            <img class="img-fluid" src="img/POST2/POST2.4.png" alt="">
+            </a>
+<p>
+            Dyrk1a docking to DM-compounds, using two different grids, only the best pose from the best grid was chosen to use in later ligand align.</p>
+            
+      <a href="#">
+            <img class="img-fluid" src="img/POST2/POST2.5.png" alt="">
+            </a>
+           
+            <a href="#">
+            <img class="img-fluid" src="img/POST2/POST2.6.png" alt="">
+            </a>
+            
+            <p>
+            Clk1 induced-fit docking, using two grids, only the best pose from the best grid was chosen to use in later ligand alignment.</p>
+             <a href="#">
+            <img class="img-fluid" src="img/POST2/POST2.7.png" alt="">
+            </a>
+            <p>
+            CLK1 best IFD poses orientation(DM30 is missing),</p>
+           
+            <a href="#">
+            <img class="img-fluid" src="img/POST2/POST2.8.png" alt="">
+            </a>
+        <p>Dyrk1a best IFD poses orientation, </p>
+            <h2>Step 3: Best binding poses overlayed in Cresset Forge </h2>
+            <p>It is vitally important, here the “Multi-molecule files, already pre-aligned” was applied, since we already get the best pose from induced-fit docking for each ligand.</p>
+            <a href="#">
+            <img class="img-fluid" src="img/POST2/POST2.9.png" alt="">
+            </a>
+        <p>
+            The forge projects were saved on the desktop with PIC50 values, need to double-check the accuracy of these pIC50 values.</p>
+            <p>Knime version 3.6.1 was used to run the workflow, it is an integrated part of the Schrodinger-2018-4 windows package.</p>
         </div>
       </div>
     </div>
